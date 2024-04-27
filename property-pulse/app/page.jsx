@@ -1,8 +1,16 @@
-const HomePage =() =>{
+
+import Hero from "@/components/Hero";
+import HomeProperties from "@/components/HomeProperties";
+import InfoBoxes from "@/components/InfoBoxes";
+
+const HomePage = () =>{
+    
     return(
-        <div>
-            <h1>Welcome to the home page</h1>
-        </div>
+        <>
+            <Hero />
+            <InfoBoxes />
+            <HomeProperties />
+        </>
     )
 }
 export default HomePage;
