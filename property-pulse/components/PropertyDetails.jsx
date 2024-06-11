@@ -73,25 +73,21 @@ const PropertyDetails = ({property}) =>{
                   {property.square_feet} { } <span className="hidden sm:inline">sqft</span>
                 </p>
               </div>
-              <p className="text-gray-500 mb-4">
-                This is a beautiful apartment located near the commons
+              <p className="text-gray-500 mb-4 text-center">
+                {property.description}
               </p>
-              <p className="text-gray-500 mb-4">
-                We have a beautiful apartment located near the commons. It is a
-                2 bedroom apartment with a full kitchen and bathroom. It is
-                available htmlFor weekly or monthly rentals.
-              </p>
+              
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-lg font-bold mb-6">Amenities</h3>
 
               <ul
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none space-y-2"
               >
-                {property.amenities.map((amenity) =>(
-                  <li>
-                  <i className="fas fa-check text-green-600 mr-2 mt-3"></i> {amenity}
+                {property.amenities.map((amenity,index) =>(
+                  <li key={index}>
+                  <FaCheck className='inline-block text-green-600 mr-2' />{' '}{amenity}
                 </li>
                 ))}
                 

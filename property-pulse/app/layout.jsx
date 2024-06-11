@@ -1,6 +1,7 @@
 import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import AuthProvider from '@/components/authProvider';
 
 export const metadata ={
     title: 'Property Rental App',
@@ -10,16 +11,16 @@ export const metadata ={
 
 const MainLayout = ({children}) => {
     return (
-    <html lang="en">
-        <body>
+      <AuthProvider>
+        <html lang="en">
+          <body>
             <Navbar />
-            <main>
-                {children}
-            </main>
+            <main>{children}</main>
             <Footer />
-        </body>
-    </html>
-    )
+          </body>
+        </html>
+      </AuthProvider>
+    );
 }
 
 export default MainLayout;
