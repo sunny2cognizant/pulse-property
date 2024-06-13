@@ -5,12 +5,15 @@ import { fetchProperties } from '@/utils/requests';
 
 
 const PropertiesPage =  async () => {
-  const properties = await fetchProperties();
+  const propertie = await fetchProperties()
+  const properties = propertie.sort((a, b) => {
+    b.square_feet - a.square_feet;
+  });
 
 
   // sort properties according to date
 
-  properties.sort((a, b) => { new Date(b.createdAt) - new Date(a.createdAt) });
+  
 
   return (
     <section className="px-4 py-6">
